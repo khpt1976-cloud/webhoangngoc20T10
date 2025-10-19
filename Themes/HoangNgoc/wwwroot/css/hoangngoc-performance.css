@@ -1,0 +1,456 @@
+/* ===================================
+   HoangNgoc Professional Theme v2.0
+   Performance Optimization CSS
+   ================================== */
+
+/* ===================================
+   Critical CSS - Above the fold
+   ================================== */
+
+/* Preload Critical Fonts */
+@font-display: swap;
+
+/* Optimize Font Loading */
+.font-inter {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-display: swap;
+}
+
+.font-poppins {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-display: swap;
+}
+
+/* ===================================
+   Lazy Loading Optimizations
+   ================================== */
+
+/* Image Lazy Loading */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Placeholder for lazy images */
+.img-placeholder {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+}
+
+@keyframes loading {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+
+/* ===================================
+   CSS Containment for Performance
+   ================================== */
+
+/* Layout containment for cards */
+.card {
+    contain: layout style;
+}
+
+/* Paint containment for animations */
+.animate-fade-in,
+.animate-slide-in-down,
+.animate-zoom-in {
+    contain: paint;
+}
+
+/* ===================================
+   GPU Acceleration
+   ================================== */
+
+/* Force GPU acceleration for smooth animations */
+.hover-lift,
+.btn-enhanced,
+.theme-toggle,
+.scroll-reveal {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* ===================================
+   Reduce Layout Thrashing
+   ================================== */
+
+/* Use transform instead of changing layout properties */
+.smooth-transform {
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+}
+
+/* Optimize scroll performance */
+.scroll-container {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+}
+
+/* ===================================
+   Critical Resource Hints
+   ================================== */
+
+/* Preload critical resources */
+.preload-critical {
+    content: '';
+}
+
+/* DNS prefetch for external resources */
+.dns-prefetch {
+    content: '';
+}
+
+/* ===================================
+   Minimize Repaints and Reflows
+   ================================== */
+
+/* Use CSS transforms for animations */
+.performance-animation {
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Optimize hover states */
+.performance-hover {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+                box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.performance-hover:hover {
+    transform: translateY(-2px) translateZ(0);
+}
+
+/* ===================================
+   Memory Optimization
+   ================================== */
+
+/* Limit animation iterations for memory */
+.memory-optimized-animation {
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+/* Clean up unused animations */
+.animation-cleanup {
+    animation: none !important;
+}
+
+/* ===================================
+   Responsive Images Optimization
+   ================================== */
+
+/* Responsive image container */
+.responsive-img-container {
+    position: relative;
+    overflow: hidden;
+    background-color: #f8f9fa;
+}
+
+.responsive-img-container::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+}
+
+.responsive-img-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ===================================
+   Critical CSS Inlining
+   ================================== */
+
+/* Above-the-fold styles */
+.critical-header {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1030;
+}
+
+.critical-hero {
+    background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+    color: white;
+    padding: 5rem 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+}
+
+/* ===================================
+   Intersection Observer Optimizations
+   ================================== */
+
+/* Elements to observe */
+.observe-visibility {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.observe-visibility.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ===================================
+   Bundle Splitting Optimization
+   ================================== */
+
+/* Critical CSS for immediate rendering */
+.critical-path {
+    /* Essential styles for first paint */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #212529;
+}
+
+/* Non-critical CSS for deferred loading */
+.non-critical {
+    /* Styles that can be loaded later */
+    animation-delay: 0.1s;
+}
+
+/* ===================================
+   Service Worker Cache Optimization
+   ================================== */
+
+/* Cache-friendly selectors */
+.cache-optimized {
+    /* Styles for cached resources */
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMSIgaGVpZ2h0PSIxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IiNmOGY5ZmEiLz48L3N2Zz4=');
+}
+
+/* ===================================
+   Web Vitals Optimization
+   ================================== */
+
+/* Largest Contentful Paint (LCP) optimization */
+.lcp-optimized {
+    /* Optimize largest content element */
+    contain: layout;
+    content-visibility: auto;
+}
+
+/* First Input Delay (FID) optimization */
+.fid-optimized {
+    /* Reduce JavaScript execution time */
+    pointer-events: auto;
+    touch-action: manipulation;
+}
+
+/* Cumulative Layout Shift (CLS) optimization */
+.cls-optimized {
+    /* Prevent layout shifts */
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    height: auto;
+}
+
+/* ===================================
+   Resource Loading Optimization
+   ================================== */
+
+/* Preload critical resources */
+.preload-fonts {
+    font-display: swap;
+}
+
+/* Defer non-critical resources */
+.defer-loading {
+    loading: lazy;
+}
+
+/* ===================================
+   CSS Grid and Flexbox Optimization
+   ================================== */
+
+/* Optimized grid layouts */
+.performance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    contain: layout;
+}
+
+/* Optimized flex layouts */
+.performance-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    contain: layout;
+}
+
+/* ===================================
+   Dark Mode Performance
+   ================================== */
+
+/* Optimize dark mode transitions */
+[data-theme="dark"] * {
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Reduce dark mode calculation overhead */
+[data-theme="dark"] .performance-dark {
+    background-color: var(--hn-bg-secondary);
+    color: var(--hn-text-primary);
+    border-color: var(--hn-border-color);
+}
+
+/* ===================================
+   Mobile Performance Optimization
+   ================================== */
+
+@media (max-width: 768px) {
+    /* Reduce animations on mobile */
+    .mobile-performance * {
+        animation-duration: 0.2s !important;
+        transition-duration: 0.2s !important;
+    }
+    
+    /* Optimize touch interactions */
+    .mobile-touch {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Reduce complexity on mobile */
+    .mobile-simple {
+        box-shadow: none;
+        border-radius: 0.25rem;
+        background-image: none;
+    }
+}
+
+/* ===================================
+   Print Performance
+   ================================== */
+
+@media print {
+    /* Remove unnecessary elements for print */
+    .no-print,
+    .theme-toggle,
+    .particles-bg,
+    .scroll-reveal {
+        display: none !important;
+    }
+    
+    /* Optimize print styles */
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===================================
+   Accessibility Performance
+   ================================== */
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .respect-motion-preference * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* High contrast mode optimization */
+@media (prefers-contrast: high) {
+    .high-contrast-optimized {
+        border: 2px solid;
+        background: white;
+        color: black;
+    }
+}
+
+/* ===================================
+   Performance Monitoring
+   ================================== */
+
+/* Mark performance-critical elements */
+.perf-critical {
+    /* Elements that affect Core Web Vitals */
+    contain: layout style paint;
+}
+
+.perf-monitor {
+    /* Elements to monitor for performance */
+    will-change: auto;
+}
+
+/* ===================================
+   Utility Classes for Performance
+   ================================== */
+
+/* GPU acceleration utilities */
+.gpu-accelerated {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+/* Layout containment utilities */
+.contain-layout {
+    contain: layout;
+}
+
+.contain-paint {
+    contain: paint;
+}
+
+.contain-size {
+    contain: size;
+}
+
+.contain-style {
+    contain: style;
+}
+
+/* Content visibility utilities */
+.content-visibility-auto {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 500px;
+}
+
+/* Will-change utilities */
+.will-change-transform {
+    will-change: transform;
+}
+
+.will-change-opacity {
+    will-change: opacity;
+}
+
+.will-change-scroll {
+    will-change: scroll-position;
+}
+
+/* Reset will-change after animation */
+.will-change-reset {
+    will-change: auto;
+}

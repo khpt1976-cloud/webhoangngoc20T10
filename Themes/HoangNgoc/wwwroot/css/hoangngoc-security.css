@@ -1,0 +1,548 @@
+/* ===================================
+   HoangNgoc Professional Theme v2.0
+   Security & Accessibility CSS
+   ================================== */
+
+/* ===================================
+   Security Enhancements
+   ================================== */
+
+/* Prevent content injection */
+.user-content {
+    /* Sanitize user-generated content */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/* Secure form styling */
+.secure-form {
+    /* Visual indicators for secure forms */
+    border: 2px solid #28a745;
+    border-radius: 8px;
+    padding: 1rem;
+    background: linear-gradient(135deg, rgba(40, 167, 69, 0.05) 0%, rgba(40, 167, 69, 0.1) 100%);
+}
+
+.secure-form::before {
+    content: "🔒";
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+/* HTTPS indicator */
+.https-indicator {
+    display: inline-flex;
+    align-items: center;
+    color: #28a745;
+    font-size: 0.875rem;
+    margin-left: 0.5rem;
+}
+
+.https-indicator::before {
+    content: "🔒";
+    margin-right: 0.25rem;
+}
+
+/* Content Security Policy violations styling */
+.csp-violation {
+    border: 2px solid #dc3545 !important;
+    background-color: rgba(220, 53, 69, 0.1) !important;
+}
+
+/* ===================================
+   Accessibility Enhancements
+   ================================== */
+
+/* Skip links for screen readers */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: #000;
+    color: #fff;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 10000;
+    font-weight: bold;
+    transition: top 0.3s ease;
+}
+
+.skip-link:focus {
+    top: 6px;
+    outline: 3px solid #ffd700;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .high-contrast {
+        background: #000 !important;
+        color: #fff !important;
+        border: 2px solid #fff !important;
+    }
+    
+    .high-contrast a {
+        color: #ffff00 !important;
+        text-decoration: underline !important;
+    }
+    
+    .high-contrast button {
+        background: #fff !important;
+        color: #000 !important;
+        border: 2px solid #000 !important;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .respect-motion * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    .respect-motion .parallax {
+        transform: none !important;
+    }
+    
+    .respect-motion .auto-play {
+        animation-play-state: paused !important;
+    }
+}
+
+/* Focus indicators */
+.focus-visible:focus,
+.focus-visible:focus-visible {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+/* Remove default focus for mouse users */
+.focus-visible:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+    box-shadow: 0 0 0 1px #fff, 0 0 0 4px #0d6efd;
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+.sr-only-focusable:focus {
+    position: static !important;
+    width: auto !important;
+    height: auto !important;
+    padding: inherit !important;
+    margin: inherit !important;
+    overflow: visible !important;
+    clip: auto !important;
+    white-space: normal !important;
+}
+
+/* ARIA live regions */
+.aria-live-polite {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.aria-live-assertive {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Color contrast helpers */
+.contrast-aa {
+    /* Ensure AA level contrast (4.5:1) */
+    color: #212529;
+    background-color: #ffffff;
+}
+
+.contrast-aaa {
+    /* Ensure AAA level contrast (7:1) */
+    color: #000000;
+    background-color: #ffffff;
+}
+
+/* Dark mode contrast */
+[data-theme="dark"] .contrast-aa {
+    color: #ffffff;
+    background-color: #212529;
+}
+
+[data-theme="dark"] .contrast-aaa {
+    color: #ffffff;
+    background-color: #000000;
+}
+
+/* ===================================
+   Form Security & Accessibility
+   ================================== */
+
+/* Required field indicators */
+.required::after {
+    content: " *";
+    color: #dc3545;
+    font-weight: bold;
+    aria-label: "required";
+}
+
+/* Error states */
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: #dc3545;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5'/%3e%3cpath d='m5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Success states */
+.form-control.is-valid,
+.form-select.is-valid {
+    border-color: #28a745;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%2328a745' d='m2.3 6.73.94-.94 1.38 1.38 3.68-3.68.94.94-4.62 4.62z'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+}
+
+/* Form validation feedback */
+.invalid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #dc3545;
+}
+
+.valid-feedback {
+    display: block;
+    width: 100%;
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    color: #28a745;
+}
+
+/* ===================================
+   Navigation Accessibility
+   ================================== */
+
+/* Keyboard navigation indicators */
+.nav-link:focus-visible,
+.navbar-nav .nav-link:focus-visible {
+    background-color: rgba(13, 110, 253, 0.1);
+    border-radius: 4px;
+}
+
+/* Dropdown accessibility */
+.dropdown-menu {
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175);
+}
+
+.dropdown-item:focus-visible {
+    background-color: #e9ecef;
+    outline: 2px solid #0d6efd;
+    outline-offset: -2px;
+}
+
+/* Breadcrumb accessibility */
+.breadcrumb-item + .breadcrumb-item::before {
+    content: ">";
+    color: #6c757d;
+    padding: 0 0.5rem;
+}
+
+.breadcrumb-item.active {
+    color: #6c757d;
+    font-weight: normal;
+}
+
+/* ===================================
+   Content Accessibility
+   ================================== */
+
+/* Heading hierarchy */
+.heading-hierarchy h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.heading-hierarchy h2 {
+    font-size: 2rem;
+    margin-bottom: 0.875rem;
+}
+
+.heading-hierarchy h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.heading-hierarchy h4 {
+    font-size: 1.5rem;
+    margin-bottom: 0.625rem;
+}
+
+.heading-hierarchy h5 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.heading-hierarchy h6 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Link accessibility */
+a:not(.btn) {
+    text-decoration: underline;
+    text-underline-offset: 0.125em;
+}
+
+a:not(.btn):hover {
+    text-decoration-thickness: 2px;
+}
+
+a:not(.btn):focus-visible {
+    outline: 2px solid #0d6efd;
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* External link indicators */
+a[href^="http"]:not([href*="localhost"]):not([href*="127.0.0.1"])::after {
+    content: " ↗";
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+/* ===================================
+   Media Accessibility
+   ================================== */
+
+/* Image accessibility */
+img:not([alt]) {
+    border: 3px solid #dc3545;
+    filter: grayscale(100%);
+}
+
+img[alt=""] {
+    /* Decorative images */
+    opacity: 0.8;
+}
+
+/* Video accessibility */
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+video:focus-visible {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+/* Audio accessibility */
+audio {
+    width: 100%;
+    max-width: 400px;
+}
+
+audio:focus-visible {
+    outline: 3px solid #0d6efd;
+    outline-offset: 2px;
+}
+
+/* ===================================
+   Table Accessibility
+   ================================== */
+
+/* Accessible tables */
+.table-accessible {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table-accessible th {
+    background-color: #f8f9fa;
+    font-weight: bold;
+    text-align: left;
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+.table-accessible td {
+    padding: 0.75rem;
+    border: 1px solid #dee2e6;
+}
+
+.table-accessible caption {
+    caption-side: top;
+    padding: 0.75rem;
+    color: #6c757d;
+    text-align: left;
+    font-weight: bold;
+}
+
+/* ===================================
+   Button Accessibility
+   ================================== */
+
+/* Button states */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn:focus-visible {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+}
+
+/* Icon buttons */
+.btn-icon-only {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ===================================
+   Print Accessibility
+   ================================== */
+
+@media print {
+    /* Ensure good contrast for printing */
+    * {
+        background: transparent !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    a,
+    a:visited {
+        text-decoration: underline;
+        color: black !important;
+    }
+    
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+    
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+    
+    /* Hide non-essential elements */
+    .no-print,
+    nav,
+    .navbar,
+    .sidebar,
+    .btn,
+    .form-control {
+        display: none !important;
+    }
+    
+    /* Ensure headings break properly */
+    h1, h2, h3, h4, h5, h6 {
+        break-after: avoid;
+        page-break-after: avoid;
+    }
+    
+    /* Avoid breaking inside elements */
+    blockquote,
+    pre,
+    img,
+    table,
+    figure {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+}
+
+/* ===================================
+   Error Handling
+   ================================== */
+
+/* JavaScript disabled fallback */
+.no-js .js-only {
+    display: none !important;
+}
+
+.no-js .no-js-fallback {
+    display: block !important;
+}
+
+/* CSS not loaded fallback */
+.css-loading {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+    padding: 1rem;
+}
+
+/* ===================================
+   Security Headers Support
+   ================================== */
+
+/* Content Security Policy support */
+.csp-compliant {
+    /* Avoid inline styles when CSP is strict */
+    background-image: none;
+    background-color: var(--bg-color, #ffffff);
+    color: var(--text-color, #212529);
+}
+
+/* Referrer Policy indicators */
+.external-link[data-referrer="no-referrer"] {
+    position: relative;
+}
+
+.external-link[data-referrer="no-referrer"]::before {
+    content: "🔒";
+    position: absolute;
+    top: -5px;
+    right: -15px;
+    font-size: 0.7em;
+    opacity: 0.7;
+}

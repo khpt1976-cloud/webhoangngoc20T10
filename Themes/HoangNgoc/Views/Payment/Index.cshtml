@@ -1,0 +1,411 @@
+@{
+    ViewData["Title"] = "Thanh toán - HoangNgoc Professional";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="payment-page">
+    <!-- Page Header -->
+    <div class="page-header bg-gradient-primary text-white py-5 mb-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8">
+                    <h1 class="display-5 fw-bold mb-3">
+                        <i class="fas fa-credit-card me-3"></i>Thanh toán
+                    </h1>
+                    <p class="lead mb-0">
+                        Hệ thống thanh toán an toàn và tiện lợi với nhiều phương thức đa dạng
+                    </p>
+                </div>
+                <div class="col-lg-4 text-center">
+                    <div class="payment-icon">
+                        <i class="fas fa-shield-alt display-1 text-white-50"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!-- Payment Form -->
+            <div class="col-lg-8">
+                <div class="payment-form-section">
+                    <!-- Payment Methods -->
+                    <div class="card shadow-sm border-0 mb-4">
+                        <div class="card-header bg-white border-0 py-3">
+                            <h4 class="mb-0">
+                                <i class="fas fa-wallet text-primary me-2"></i>
+                                Chọn phương thức thanh toán
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="payment-methods">
+                                <!-- E-Wallet -->
+                                <div class="payment-method mb-3">
+                                    <input type="radio" class="btn-check" name="paymentMethod" id="ewallet" value="ewallet" checked>
+                                    <label class="btn btn-outline-primary w-100 p-3 text-start" for="ewallet">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-wallet fa-2x text-primary me-3"></i>
+                                            <div>
+                                                <h6 class="mb-1">Ví điện tử HoangNgoc</h6>
+                                                <small class="text-muted">Số dư: 1,250,000 VNĐ</small>
+                                            </div>
+                                            <div class="ms-auto">
+                                                <span class="badge bg-success">Khuyến nghị</span>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <!-- Bank Transfer -->
+                                <div class="payment-method mb-3">
+                                    <input type="radio" class="btn-check" name="paymentMethod" id="bank" value="bank">
+                                    <label class="btn btn-outline-primary w-100 p-3 text-start" for="bank">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-university fa-2x text-primary me-3"></i>
+                                            <div>
+                                                <h6 class="mb-1">Chuyển khoản ngân hàng</h6>
+                                                <small class="text-muted">Vietcombank, Techcombank, BIDV...</small>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <!-- Credit Card -->
+                                <div class="payment-method mb-3">
+                                    <input type="radio" class="btn-check" name="paymentMethod" id="card" value="card">
+                                    <label class="btn btn-outline-primary w-100 p-3 text-start" for="card">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-credit-card fa-2x text-primary me-3"></i>
+                                            <div>
+                                                <h6 class="mb-1">Thẻ tín dụng/Ghi nợ</h6>
+                                                <small class="text-muted">Visa, Mastercard, JCB</small>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+
+                                <!-- QR Code -->
+                                <div class="payment-method mb-3">
+                                    <input type="radio" class="btn-check" name="paymentMethod" id="qr" value="qr">
+                                    <label class="btn btn-outline-primary w-100 p-3 text-start" for="qr">
+                                        <div class="d-flex align-items-center">
+                                            <i class="fas fa-qrcode fa-2x text-primary me-3"></i>
+                                            <div>
+                                                <h6 class="mb-1">Quét mã QR</h6>
+                                                <small class="text-muted">VietQR, ZaloPay, MoMo</small>
+                                            </div>
+                                        </div>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Details Form -->
+                    <div class="card shadow-sm border-0 mb-4" id="paymentDetailsCard">
+                        <div class="card-header bg-white border-0 py-3">
+                            <h4 class="mb-0">
+                                <i class="fas fa-info-circle text-primary me-2"></i>
+                                Thông tin thanh toán
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                            <form id="paymentForm">
+                                <!-- E-Wallet Form -->
+                                <div class="payment-form" id="ewalletForm">
+                                    <div class="alert alert-info">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        Bạn sẽ sử dụng số dư trong ví điện tử để thanh toán
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Mật khẩu ví điện tử</label>
+                                        <input type="password" class="form-control" placeholder="Nhập mật khẩu ví">
+                                    </div>
+                                </div>
+
+                                <!-- Bank Transfer Form -->
+                                <div class="payment-form d-none" id="bankForm">
+                                    <div class="mb-3">
+                                        <label class="form-label">Chọn ngân hàng</label>
+                                        <select class="form-select">
+                                            <option>Vietcombank</option>
+                                            <option>Techcombank</option>
+                                            <option>BIDV</option>
+                                            <option>VietinBank</option>
+                                        </select>
+                                    </div>
+                                    <div class="alert alert-warning">
+                                        <i class="fas fa-exclamation-triangle me-2"></i>
+                                        Thông tin chuyển khoản sẽ được hiển thị sau khi xác nhận
+                                    </div>
+                                </div>
+
+                                <!-- Credit Card Form -->
+                                <div class="payment-form d-none" id="cardForm">
+                                    <div class="row">
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label">Số thẻ</label>
+                                            <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">Ngày hết hạn</label>
+                                            <input type="text" class="form-control" placeholder="MM/YY">
+                                        </div>
+                                        <div class="col-md-6 mb-3">
+                                            <label class="form-label">CVV</label>
+                                            <input type="text" class="form-control" placeholder="123">
+                                        </div>
+                                        <div class="col-12 mb-3">
+                                            <label class="form-label">Tên chủ thẻ</label>
+                                            <input type="text" class="form-control" placeholder="NGUYEN VAN A">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- QR Code Form -->
+                                <div class="payment-form d-none" id="qrForm">
+                                    <div class="text-center">
+                                        <div class="qr-code-placeholder bg-light border rounded p-4 mb-3" style="width: 200px; height: 200px; margin: 0 auto;">
+                                            <i class="fas fa-qrcode fa-5x text-muted"></i>
+                                        </div>
+                                        <p class="text-muted">Quét mã QR bằng ứng dụng ngân hàng hoặc ví điện tử</p>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Summary -->
+            <div class="col-lg-4">
+                <div class="order-summary-section">
+                    <div class="card shadow-sm border-0 sticky-top" style="top: 2rem;">
+                        <div class="card-header bg-primary text-white py-3">
+                            <h5 class="mb-0">
+                                <i class="fas fa-receipt me-2"></i>
+                                Tóm tắt đơn hàng
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Order Items -->
+                            <div class="order-items mb-4">
+                                <div class="order-item d-flex align-items-center mb-3 p-3 bg-light rounded">
+                                    <img src="/Themes/HoangNgoc/wwwroot/images/placeholder-course.jpg" 
+                                         class="order-item-image rounded me-3" 
+                                         alt="Course"
+                                         style="width: 60px; height: 60px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Khóa học lập trình Web</h6>
+                                        <small class="text-muted">Giảng viên: Nguyễn Văn A</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="fw-bold">500,000 VNĐ</div>
+                                    </div>
+                                </div>
+
+                                <div class="order-item d-flex align-items-center mb-3 p-3 bg-light rounded">
+                                    <img src="/Themes/HoangNgoc/wwwroot/images/placeholder-course.jpg" 
+                                         class="order-item-image rounded me-3" 
+                                         alt="Course"
+                                         style="width: 60px; height: 60px; object-fit: cover;">
+                                    <div class="flex-grow-1">
+                                        <h6 class="mb-1">Khóa học Mobile App</h6>
+                                        <small class="text-muted">Giảng viên: Trần Thị B</small>
+                                    </div>
+                                    <div class="text-end">
+                                        <div class="fw-bold">750,000 VNĐ</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Discount Code -->
+                            <div class="discount-section mb-4">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Mã giảm giá">
+                                    <button class="btn btn-outline-secondary" type="button">
+                                        <i class="fas fa-check"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Order Total -->
+                            <div class="order-total">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Tạm tính:</span>
+                                    <span>1,250,000 VNĐ</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2 text-success">
+                                    <span>Giảm giá:</span>
+                                    <span>-50,000 VNĐ</span>
+                                </div>
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span>Phí xử lý:</span>
+                                    <span>0 VNĐ</span>
+                                </div>
+                                <hr>
+                                <div class="d-flex justify-content-between fw-bold fs-5">
+                                    <span>Tổng cộng:</span>
+                                    <span class="text-primary">1,200,000 VNĐ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer bg-white border-0">
+                            <button class="btn btn-primary btn-lg w-100" id="processPaymentBtn">
+                                <i class="fas fa-lock me-2"></i>
+                                Thanh toán an toàn
+                            </button>
+                            <div class="text-center mt-3">
+                                <small class="text-muted">
+                                    <i class="fas fa-shield-alt me-1"></i>
+                                    Giao dịch được bảo mật bởi SSL 256-bit
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security Features -->
+        <div class="security-features mt-5">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="security-item">
+                        <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+                        <h5>Bảo mật SSL</h5>
+                        <p class="text-muted">Mã hóa 256-bit bảo vệ thông tin</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="security-item">
+                        <i class="fas fa-lock fa-3x text-success mb-3"></i>
+                        <h5>Thanh toán an toàn</h5>
+                        <p class="text-muted">Tuân thủ chuẩn PCI DSS</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="security-item">
+                        <i class="fas fa-headset fa-3x text-info mb-3"></i>
+                        <h5>Hỗ trợ 24/7</h5>
+                        <p class="text-muted">Đội ngũ hỗ trợ luôn sẵn sàng</p>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="security-item">
+                        <i class="fas fa-undo fa-3x text-warning mb-3"></i>
+                        <h5>Hoàn tiền</h5>
+                        <p class="text-muted">Chính sách hoàn tiền linh hoạt</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.bg-gradient-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+}
+
+.payment-method label {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.payment-method input[type="radio"]:checked + label {
+    background-color: var(--bs-primary);
+    color: white;
+    border-color: var(--bs-primary);
+}
+
+.payment-method label:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.order-item {
+    transition: all 0.3s ease;
+}
+
+.order-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.security-item {
+    transition: all 0.3s ease;
+    padding: 2rem 1rem;
+    border-radius: 12px;
+}
+
+.security-item:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-5px);
+}
+
+#processPaymentBtn {
+    transition: all 0.3s ease;
+}
+
+#processPaymentBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(13, 110, 253, 0.3);
+}
+
+.qr-code-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .order-summary-section .sticky-top {
+        position: relative !important;
+        top: auto !important;
+    }
+    
+    .security-features .row {
+        text-align: center;
+    }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Payment method switching
+    const paymentMethods = document.querySelectorAll('input[name="paymentMethod"]');
+    const paymentForms = document.querySelectorAll('.payment-form');
+    
+    paymentMethods.forEach(method => {
+        method.addEventListener('change', function() {
+            // Hide all forms
+            paymentForms.forEach(form => form.classList.add('d-none'));
+            
+            // Show selected form
+            const selectedForm = document.getElementById(this.value + 'Form');
+            if (selectedForm) {
+                selectedForm.classList.remove('d-none');
+            }
+        });
+    });
+    
+    // Process payment button
+    document.getElementById('processPaymentBtn').addEventListener('click', function() {
+        const selectedMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+        
+        // Show loading state
+        this.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Đang xử lý...';
+        this.disabled = true;
+        
+        // Simulate payment processing
+        setTimeout(() => {
+            alert('Thanh toán thành công! Cảm ơn bạn đã sử dụng dịch vụ.');
+            this.innerHTML = '<i class="fas fa-check me-2"></i>Thanh toán thành công';
+            this.classList.remove('btn-primary');
+            this.classList.add('btn-success');
+        }, 3000);
+    });
+});
+</script>

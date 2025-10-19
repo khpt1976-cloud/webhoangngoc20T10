@@ -58,6 +58,9 @@
     <!-- Theme CSS Resources -->
     <link rel="stylesheet" href="{{ '~/Themes/HoangNgoc/css/hoangngoc-theme.css' | href }}" />
     <link rel="stylesheet" href="{{ '~/Themes/HoangNgoc/css/hoangngoc-responsive.css' | href }}" />
+    <link rel="stylesheet" href="{{ '~/Themes/HoangNgoc/css/hoangngoc-advanced.css' | href }}" />
+    <link rel="stylesheet" href="{{ '~/Themes/HoangNgoc/css/hoangngoc-performance.css' | href }}" />
+    <link rel="stylesheet" href="{{ '~/Themes/HoangNgoc/css/hoangngoc-security.css' | href }}" />
     
     <!-- Head Resources -->
     {% render_section "HeadMeta", required: false %}
@@ -537,6 +540,9 @@
     
     <!-- Theme JavaScript -->
     {{ "hoangngoc-theme.js" | asset_url | script_tag }}
+    {{ "hoangngoc-advanced.js" | asset_url | script_tag }}
+    {{ "hoangngoc-performance.js" | asset_url | script_tag }}
+    {{ "hoangngoc-security.js" | asset_url | script_tag }}
     
     <!-- Footer Scripts -->
     {% render_section "FooterScripts", required: false %}

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="vi" dir="ltr">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <title>HoangNgoc Professional Theme v2.0 - Demo</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Demo của HoangNgoc Professional Theme v2.0 với Bootstrap 5.3 và responsive design" />
+    <meta name="keywords" content="HoangNgoc, theme, bootstrap, responsive, professional" />
+    <meta name="author" content="HoangNgoc Professional Theme v2.0" />
+    <meta name="theme-color" content="#0d6efd" />
+    
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    
+    <!-- Font Awesome 6.5 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Theme CSS Resources -->
+    <link rel="stylesheet" href="../Themes/HoangNgoc/wwwroot/css/hoangngoc-theme.css" />
+    <link rel="stylesheet" href="../Themes/HoangNgoc/wwwroot/css/hoangngoc-responsive.css" />
+    <link rel="stylesheet" href="../Themes/HoangNgoc/wwwroot/css/hoangngoc-advanced.css" />
+</head>
+<body class="authenticated" data-theme="hoangngoc-v2">
+    
+    <!-- Header -->
+    <header class="site-header navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top" role="banner">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand d-flex align-items-center" href="#" title="HoangNgoc Professional Theme">
+                <div class="logo-placeholder bg-primary rounded me-2 d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+                    <i class="fas fa-gem text-white"></i>
+                </div>
+                <span class="logo-text fw-bold text-primary">HoangNgoc Professional</span>
+            </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <!-- Navigation -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <!-- Main Navigation -->
+                <nav class="navbar-nav me-auto">
+                    <a class="nav-link active" href="#">
+                        <i class="fas fa-home me-1"></i>Trang chủ
+                    </a>
+                    <a class="nav-link" href="#news">
+                        <i class="fas fa-newspaper me-1"></i>Tin tức
+                    </a>
+                    <a class="nav-link" href="#training">
+                        <i class="fas fa-graduation-cap me-1"></i>Đào tạo
+                    </a>
+                    <a class="nav-link" href="#application">
+                        <i class="fas fa-briefcase me-1"></i>Ứng dụng
+                    </a>
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-cogs me-1"></i>Dịch vụ
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#payment"><i class="fas fa-credit-card me-2"></i>Thanh toán</a></li>
+                            <li><a class="dropdown-item" href="#wallet"><i class="fas fa-wallet me-2"></i>Ví điện tử</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#support"><i class="fas fa-headset me-2"></i>Hỗ trợ</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                
+                <!-- User Menu -->
+                <div class="navbar-nav ms-auto">
+                    <!-- Wallet Balance -->
+                    <div class="nav-item me-3">
+                        <span class="navbar-text">
+                            <i class="fas fa-wallet text-success"></i>
+                            <span class="fw-semibold">1,250,000 VNĐ</span>
+                        </span>
+                    </div>
+                    
+                    <!-- Notifications -->
+                    <div class="nav-item dropdown me-2">
+                        <a class="nav-link position-relative" href="#" role="button" data-bs-toggle="dropdown">
+                            <i class="fas fa-bell"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header">Thông báo</h6></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-info-circle text-info me-2"></i>Khóa học mới</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-check-circle text-success me-2"></i>Thanh toán thành công</a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- User Dropdown -->
+                    <div class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                            <div class="rounded-circle bg-primary d-flex align-items-center justify-content-center me-2" style="width: 32px; height: 32px;">
+                                <i class="fas fa-user text-white"></i>
+                            </div>
+                            <span class="d-none d-md-inline">Nguyễn Văn A</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li><h6 class="dropdown-header">Nguyễn Văn A</h6></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>Hồ sơ cá nhân</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-wallet me-2"></i>Ví điện tử</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-graduation-cap me-2"></i>Khóa học của tôi</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#"><i class="fas fa-sign-out-alt me-2"></i>Đăng xuất</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Main Content -->
+    <main class="site-main" id="main-content" role="main">
+        
+        <!-- Hero Section -->
+        <section class="hero-section bg-gradient-primary text-white py-5 mb-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <div class="hero-content">
+                            <h1 class="hero-title display-4 fw-bold mb-3 scroll-reveal">
+                                HoangNgoc Professional Theme v2.0
+                            </h1>
+                            <p class="hero-subtitle lead mb-4 scroll-reveal animate-delay-1">
+                                Nền tảng quản lý và đào tạo chuyên nghiệp - Giải pháp toàn diện cho doanh nghiệp hiện đại với Bootstrap 5.3
+                            </p>
+                            <div class="hero-actions scroll-reveal animate-delay-2">
+                                <a href="#features" class="btn btn-light btn-lg me-3 shadow-sm btn-enhanced">
+                                    <i class="fas fa-rocket me-2"></i>Khám phá tính năng
+                                </a>
+                                <a href="#demo" class="btn btn-outline-light btn-lg shadow-sm btn-enhanced">
+                                    <i class="fas fa-play me-2"></i>Xem demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center">
+                        <div class="hero-image">
+                            <i class="fas fa-laptop-code display-1 text-white-50 mb-3"></i>
+                            <div class="hero-stats d-flex justify-content-center gap-4">
+                                <div class="stat-item text-center">
+                                    <div class="stat-number h4 fw-bold">1000+</div>
+                                    <div class="stat-label small">Học viên</div>
+                                </div>
+                                <div class="stat-item text-center">
+                                    <div class="stat-number h4 fw-bold">50+</div>
+                                    <div class="stat-label small">Khóa học</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section py-5 mb-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title display-5 fw-bold mb-3">Tại sao chọn chúng tôi?</h2>
+                        <p class="section-subtitle lead text-muted">
+                            Chúng tôi cung cấp giải pháp toàn diện với công nghệ hiện đại và dịch vụ chuyên nghiệp
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Feature 1: Training -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card h-100 text-center p-4 border rounded-3 shadow-sm scroll-reveal-left animate-delay-1">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-graduation-cap fa-3x text-primary"></i>
+                            </div>
+                            <h4 class="feature-title mb-3">Đào tạo chuyên nghiệp</h4>
+                            <p class="feature-description text-muted mb-4">
+                                Hệ thống khóa học đa dạng với giảng viên giàu kinh nghiệm và chương trình cập nhật liên tục
+                            </p>
+                            <a href="#training" class="btn btn-outline-primary btn-enhanced">
+                                Xem khóa học <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 2: Applications -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card h-100 text-center p-4 border rounded-3 shadow-sm scroll-reveal animate-delay-2">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-mobile-alt fa-3x text-success"></i>
+                            </div>
+                            <h4 class="feature-title mb-3">Ứng dụng thông minh</h4>
+                            <p class="feature-description text-muted mb-4">
+                                Phát triển và quản lý ứng dụng với công nghệ tiên tiến, giao diện thân thiện và hiệu suất cao
+                            </p>
+                            <a href="#application" class="btn btn-outline-success btn-enhanced">
+                                Khám phá app <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Feature 3: Payment -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card h-100 text-center p-4 border rounded-3 shadow-sm scroll-reveal-right animate-delay-3">
+                            <div class="feature-icon mb-3">
+                                <i class="fas fa-credit-card fa-3x text-warning"></i>
+                            </div>
+                            <h4 class="feature-title mb-3">Thanh toán an toàn</h4>
+                            <p class="feature-description text-muted mb-4">
+                                Hệ thống thanh toán đa dạng, bảo mật cao với ví điện tử và các phương thức hiện đại
+                            </p>
+                            <a href="#payment" class="btn btn-outline-warning btn-enhanced">
+                                Tìm hiểu thêm <i class="fas fa-arrow-right ms-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats-section bg-light py-5 mb-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="stat-item">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-users fa-2x text-primary"></i>
+                            </div>
+                            <h3 class="stat-number fw-bold text-primary mb-1">1,000+</h3>
+                            <p class="stat-label text-muted">Học viên đã đăng ký</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="stat-item">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-book fa-2x text-success"></i>
+                            </div>
+                            <h3 class="stat-number fw-bold text-success mb-1">50+</h3>
+                            <p class="stat-label text-muted">Khóa học chất lượng</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="stat-item">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-mobile-alt fa-2x text-warning"></i>
+                            </div>
+                            <h3 class="stat-number fw-bold text-warning mb-1">25+</h3>
+                            <p class="stat-label text-muted">Ứng dụng phát triển</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 mb-4">
+                        <div class="stat-item">
+                            <div class="stat-icon mb-3">
+                                <i class="fas fa-star fa-2x text-info"></i>
+                            </div>
+                            <h3 class="stat-number fw-bold text-info mb-1">4.9/5</h3>
+                            <p class="stat-label text-muted">Đánh giá từ người dùng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demo Section -->
+        <section id="demo" class="demo-section py-5 mb-5">
+            <div class="container">
+                <div class="row text-center mb-5">
+                    <div class="col-lg-8 mx-auto">
+                        <h2 class="section-title display-5 fw-bold mb-3">Responsive Design Demo</h2>
+                        <p class="section-subtitle lead text-muted">
+                            Theme được thiết kế mobile-first với Bootstrap 5.3, tương thích hoàn hảo trên mọi thiết bị
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="row g-4">
+                    <!-- Mobile Demo -->
+                    <div class="col-lg-4">
+                        <div class="device-mockup text-center">
+                            <div class="device-frame mobile-frame">
+                                <div class="device-screen bg-light p-2">
+                                    <div class="mini-navbar bg-primary text-white p-1 rounded mb-2 d-flex justify-content-between">
+                                        <span><i class="fas fa-bars"></i> HoangNgoc</span>
+                                        <span><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <div class="mini-hero bg-primary text-white p-2 rounded mb-2">
+                                        <h6 class="mb-1 small">Professional Theme</h6>
+                                        <small>Mobile-first design</small>
+                                    </div>
+                                    <div class="mini-cards">
+                                        <div class="mini-card bg-white border p-2 rounded mb-1 d-flex align-items-center">
+                                            <i class="fas fa-graduation-cap text-primary me-2"></i>
+                                            <small>Đào tạo</small>
+                                        </div>
+                                        <div class="mini-card bg-white border p-2 rounded mb-1 d-flex align-items-center">
+                                            <i class="fas fa-mobile-alt text-success me-2"></i>
+                                            <small>Ứng dụng</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3"><strong>Mobile</strong><br><small>≤ 576px</small></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Tablet Demo -->
+                    <div class="col-lg-4">
+                        <div class="device-mockup text-center">
+                            <div class="device-frame tablet-frame">
+                                <div class="device-screen bg-light p-3">
+                                    <div class="mini-navbar bg-primary text-white p-2 rounded mb-3 d-flex justify-content-between">
+                                        <span class="small fw-bold">HoangNgoc Professional</span>
+                                        <span><i class="fas fa-user"></i></span>
+                                    </div>
+                                    <div class="mini-hero bg-primary text-white p-3 rounded mb-3">
+                                        <h6 class="mb-2">Professional Theme v2.0</h6>
+                                        <p class="mb-0 small">Bootstrap 5.3 responsive design</p>
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-6">
+                                            <div class="mini-card bg-white border p-2 rounded text-center">
+                                                <i class="fas fa-graduation-cap text-primary d-block mb-1"></i>
+                                                <small>Đào tạo</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="mini-card bg-white border p-2 rounded text-center">
+                                                <i class="fas fa-mobile-alt text-success d-block mb-1"></i>
+                                                <small>Ứng dụng</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3"><strong>Tablet</strong><br><small>768px - 992px</small></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Desktop Demo -->
+                    <div class="col-lg-4">
+                        <div class="device-mockup text-center">
+                            <div class="device-frame desktop-frame">
+                                <div class="device-screen bg-light p-3">
+                                    <div class="mini-navbar bg-primary text-white p-2 rounded mb-3 d-flex justify-content-between align-items-center">
+                                        <span class="fw-bold small">HoangNgoc Professional</span>
+                                        <div class="d-flex gap-2 align-items-center">
+                                            <span class="badge bg-success small">1,250,000 VNĐ</span>
+                                            <i class="fas fa-bell"></i>
+                                            <i class="fas fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="mini-hero bg-gradient-primary text-white p-3 rounded mb-3">
+                                        <h6 class="mb-2">HoangNgoc Professional Theme v2.0</h6>
+                                        <p class="mb-2 small">Nền tảng quản lý và đào tạo chuyên nghiệp</p>
+                                        <div class="d-flex gap-1">
+                                            <span class="badge bg-light text-dark small">Bootstrap 5.3</span>
+                                            <span class="badge bg-light text-dark small">Responsive</span>
+                                        </div>
+                                    </div>
+                                    <div class="row g-2">
+                                        <div class="col-4">
+                                            <div class="mini-card bg-white border p-2 rounded text-center">
+                                                <i class="fas fa-graduation-cap text-primary d-block mb-1"></i>
+                                                <small>Đào tạo</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="mini-card bg-white border p-2 rounded text-center">
+                                                <i class="fas fa-mobile-alt text-success d-block mb-1"></i>
+                                                <small>Ứng dụng</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4">
+                                            <div class="mini-card bg-white border p-2 rounded text-center">
+                                                <i class="fas fa-credit-card text-warning d-block mb-1"></i>
+                                                <small>Thanh toán</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="mt-3"><strong>Desktop</strong><br><small>≥ 1200px</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section bg-primary text-white py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h3 class="cta-title display-6 fw-bold mb-3">Sẵn sàng trải nghiệm theme chuyên nghiệp?</h3>
+                        <p class="cta-subtitle lead mb-0">
+                            HoangNgoc Professional Theme v2.0 - Giải pháp hoàn hảo cho website hiện đại
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#contact" class="btn btn-light btn-lg shadow">
+                            <i class="fas fa-download me-2"></i>Tải về ngay
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Footer -->
+    <footer class="site-footer bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Company Info -->
+                <div class="col-md-4 mb-4">
+                    <h5>HoangNgoc Professional Theme</h5>
+                    <p>Theme chuyên nghiệp với Bootstrap 5.3, responsive design và hiệu suất cao cho OrchardCore CMS.</p>
+                    <div class="social-links">
+                        <a href="#" class="text-light me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                        <a href="#" class="text-light me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="#" class="text-light"><i class="fab fa-youtube fa-lg"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="col-md-2 mb-4">
+                    <h6>Liên kết</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#about" class="text-light text-decoration-none">Giới thiệu</a></li>
+                        <li><a href="#features" class="text-light text-decoration-none">Tính năng</a></li>
+                        <li><a href="#demo" class="text-light text-decoration-none">Demo</a></li>
+                        <li><a href="#contact" class="text-light text-decoration-none">Liên hệ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="col-md-2 mb-4">
+                    <h6>Dịch vụ</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#training" class="text-light text-decoration-none">Đào tạo</a></li>
+                        <li><a href="#application" class="text-light text-decoration-none">Ứng dụng</a></li>
+                        <li><a href="#payment" class="text-light text-decoration-none">Thanh toán</a></li>
+                        <li><a href="#support" class="text-light text-decoration-none">Hỗ trợ</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="col-md-4 mb-4">
+                    <h6>Thông tin liên hệ</h6>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 123 Đường ABC, Quận XYZ, TP.HCM</p>
+                    <p><i class="fas fa-phone me-2"></i> (028) 1234 5678</p>
+                    <p><i class="fas fa-envelope me-2"></i> info@hoangngoc.com</p>
+                </div>
+            </div>
+            
+            <!-- Copyright -->
+            <hr class="my-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 HoangNgoc Professional Theme v2.0. Tất cả quyền được bảo lưu.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#privacy" class="text-light text-decoration-none me-3">Chính sách bảo mật</a>
+                    <a href="#terms" class="text-light text-decoration-none">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Bootstrap 5.3 JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- Theme JavaScript -->
+    <script src="../Themes/HoangNgoc/wwwroot/js/hoangngoc-theme.js"></script>
+    <script src="../Themes/HoangNgoc/wwwroot/js/hoangngoc-advanced.js"></script>
+
+    <!-- Demo Styles -->
+    <style>
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+        }
+        
+        .device-mockup {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        .device-frame {
+            border: 3px solid #333;
+            padding: 8px;
+            background: #333;
+            margin: 0 auto;
+        }
+        
+        .mobile-frame {
+            width: 180px;
+            height: 320px;
+            border-radius: 25px;
+        }
+        
+        .tablet-frame {
+            width: 280px;
+            height: 200px;
+            border-radius: 15px;
+        }
+        
+        .desktop-frame {
+            width: 300px;
+            height: 180px;
+            border-radius: 8px;
+        }
+        
+        .device-screen {
+            width: 100%;
+            height: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .hero-section {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .social-links a {
+            transition: color 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            color: #0d6efd !important;
+        }
+    </style>
+</body>
+</html>
