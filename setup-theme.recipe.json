@@ -1,0 +1,35 @@
+{
+  "name": "Setup HoangNgoc Theme",
+  "displayName": "Setup HoangNgoc Professional Theme v2.0",
+  "description": "Sets up the HoangNgoc theme with Bootstrap 5.3",
+  "author": "OpenHands Agent",
+  "website": "https://hoangngoc.com",
+  "version": "2.0.0",
+  "issetuprecipe": false,
+  "categories": [ "theme" ],
+  "tags": [ "theme", "bootstrap", "responsive" ],
+  "steps": [
+    {
+      "name": "themes",
+      "Themes": [
+        {
+          "ThemeName": "HoangNgoc",
+          "IsEnabled": true
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "Settings": [
+        {
+          "Name": "ISite",
+          "SiteName": "Hoàng Ngọc Professional",
+          "PageTitleFormat": "{% if Model.Title %}{{ Model.Title }} - {% endif %}{{ Site.SiteName }}",
+          "Theme": "HoangNgoc",
+          "TimeZoneId": "Asia/Ho_Chi_Minh",
+          "Culture": "vi-VN"
+        }
+      ]
+    }
+  ]
+}

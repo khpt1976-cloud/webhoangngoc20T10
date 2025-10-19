@@ -1,0 +1,125 @@
+{% comment %}
+HoangNgoc Professional Theme v2.0
+Breadcrumb Navigation
+{% endcomment %}
+
+{% if Model.Breadcrumbs and Model.Breadcrumbs.size > 1 %}
+<nav aria-label="breadcrumb" class="breadcrumb-nav">
+    <div class="container">
+        <ol class="breadcrumb bg-light rounded p-3 mb-4">
+            {% for breadcrumb in Model.Breadcrumbs %}
+                {% if forloop.last %}
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="{{ breadcrumb.Icon | default: 'fas fa-file-alt' }} me-1" aria-hidden="true"></i>
+                        {{ breadcrumb.Text }}
+                    </li>
+                {% else %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ breadcrumb.Url | href }}" class="text-decoration-none">
+                            <i class="{{ breadcrumb.Icon | default: 'fas fa-folder' }} me-1" aria-hidden="true"></i>
+                            {{ breadcrumb.Text }}
+                        </a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ol>
+    </div>
+</nav>
+{% endif %}
+
+<!-- Alternative breadcrumb for specific content types -->
+{% case Model.ContentType %}
+    {% when 'NewsArticle' %}
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <div class="container">
+                <ol class="breadcrumb bg-light rounded p-3 mb-4">
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/' | href }}" class="text-decoration-none">
+                            <i class="fas fa-home me-1" aria-hidden="true"></i>Trang chủ
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/news' | href }}" class="text-decoration-none">
+                            <i class="fas fa-newspaper me-1" aria-hidden="true"></i>Tin tức
+                        </a>
+                    </li>
+                    {% if Model.Category %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/news/category/' | append: Model.Category.Slug | href }}" class="text-decoration-none">
+                            <i class="fas fa-folder me-1" aria-hidden="true"></i>{{ Model.Category.Name }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="fas fa-file-alt me-1" aria-hidden="true"></i>{{ Model.Title }}
+                    </li>
+                </ol>
+            </div>
+        </nav>
+    
+    {% when 'Course' %}
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <div class="container">
+                <ol class="breadcrumb bg-light rounded p-3 mb-4">
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/' | href }}" class="text-decoration-none">
+                            <i class="fas fa-home me-1" aria-hidden="true"></i>Trang chủ
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/training' | href }}" class="text-decoration-none">
+                            <i class="fas fa-graduation-cap me-1" aria-hidden="true"></i>Đào tạo
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/training/courses' | href }}" class="text-decoration-none">
+                            <i class="fas fa-book me-1" aria-hidden="true"></i>Khóa học
+                        </a>
+                    </li>
+                    {% if Model.Category %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/training/category/' | append: Model.Category.Slug | href }}" class="text-decoration-none">
+                            <i class="fas fa-folder me-1" aria-hidden="true"></i>{{ Model.Category.Name }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="fas fa-play-circle me-1" aria-hidden="true"></i>{{ Model.Title }}
+                    </li>
+                </ol>
+            </div>
+        </nav>
+    
+    {% when 'JobPosting' %}
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+            <div class="container">
+                <ol class="breadcrumb bg-light rounded p-3 mb-4">
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/' | href }}" class="text-decoration-none">
+                            <i class="fas fa-home me-1" aria-hidden="true"></i>Trang chủ
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/application' | href }}" class="text-decoration-none">
+                            <i class="fas fa-mobile-alt me-1" aria-hidden="true"></i>Ứng dụng
+                        </a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/application/jobs' | href }}" class="text-decoration-none">
+                            <i class="fas fa-briefcase me-1" aria-hidden="true"></i>Việc làm
+                        </a>
+                    </li>
+                    {% if Model.Department %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ '~/application/jobs/department/' | append: Model.Department.Slug | href }}" class="text-decoration-none">
+                            <i class="fas fa-building me-1" aria-hidden="true"></i>{{ Model.Department.Name }}
+                        </a>
+                    </li>
+                    {% endif %}
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <i class="fas fa-user-tie me-1" aria-hidden="true"></i>{{ Model.Title }}
+                    </li>
+                </ol>
+            </div>
+        </nav>
+{% endcase %}

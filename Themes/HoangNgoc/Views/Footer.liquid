@@ -1,0 +1,242 @@
+{% comment %}
+HoangNgoc Professional Theme v2.0
+Footer Template
+{% endcomment %}
+
+<footer class="footer bg-dark text-light py-5 mt-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Company Info -->
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-section">
+                    <h5 class="footer-title fw-bold mb-3">
+                        <i class="fas fa-cube text-primary me-2"></i>
+                        HoangNgoc Professional
+                    </h5>
+                    <p class="footer-description text-muted mb-4">
+                        Nền tảng đào tạo và ứng dụng hàng đầu Việt Nam với hệ sinh thái hoàn chỉnh, 
+                        cung cấp giải pháp toàn diện cho doanh nghiệp và cá nhân.
+                    </p>
+                    
+                    <!-- Social Links -->
+                    <div class="social-links">
+                        <h6 class="fw-bold mb-3">Kết nối với chúng tôi</h6>
+                        <div class="d-flex gap-2">
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                               aria-label="Facebook" title="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                               aria-label="Twitter" title="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                               aria-label="LinkedIn" title="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                               aria-label="YouTube" title="YouTube">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="btn btn-outline-light btn-sm rounded-circle" 
+                               aria-label="GitHub" title="GitHub">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6">
+                <div class="footer-section">
+                    <h5 class="footer-title fw-bold mb-3">Liên kết nhanh</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2">
+                            <a href="{{ '~/' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-home me-2"></i>Trang chủ
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/about' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-info-circle me-2"></i>Giới thiệu
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/news' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-newspaper me-2"></i>Tin tức
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/contact' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-envelope me-2"></i>Liên hệ
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/help' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-question-circle me-2"></i>Trợ giúp
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Services -->
+            <div class="col-lg-2 col-md-6">
+                <div class="footer-section">
+                    <h5 class="footer-title fw-bold mb-3">Dịch vụ</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li class="mb-2">
+                            <a href="{{ '~/training/courses' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-graduation-cap me-2"></i>Khóa học
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/training/certificates' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-certificate me-2"></i>Chứng chỉ
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/application/jobs' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-briefcase me-2"></i>Việc làm
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/application/services' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-cogs me-2"></i>Ứng dụng
+                            </a>
+                        </li>
+                        <li class="mb-2">
+                            <a href="{{ '~/payment' | href }}" class="text-muted text-decoration-none hover-primary">
+                                <i class="fas fa-credit-card me-2"></i>Thanh toán
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-4 col-md-6">
+                <div class="footer-section">
+                    <h5 class="footer-title fw-bold mb-3">Thông tin liên hệ</h5>
+                    
+                    <div class="contact-info">
+                        <div class="contact-item d-flex align-items-start mb-3">
+                            <div class="contact-icon me-3">
+                                <i class="fas fa-map-marker-alt text-primary"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Địa chỉ:</strong><br>
+                                <span class="text-muted">
+                                    123 Đường Nguyễn Văn Cừ, Quận 5<br>
+                                    TP. Hồ Chí Minh, Việt Nam
+                                </span>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-start mb-3">
+                            <div class="contact-icon me-3">
+                                <i class="fas fa-phone text-primary"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Điện thoại:</strong><br>
+                                <a href="tel:+84123456789" class="text-muted text-decoration-none hover-primary">
+                                    +84 123 456 789
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-start mb-3">
+                            <div class="contact-icon me-3">
+                                <i class="fas fa-envelope text-primary"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Email:</strong><br>
+                                <a href="mailto:info@hoangngoc.com" class="text-muted text-decoration-none hover-primary">
+                                    info@hoangngoc.com
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item d-flex align-items-start mb-3">
+                            <div class="contact-icon me-3">
+                                <i class="fas fa-clock text-primary"></i>
+                            </div>
+                            <div class="contact-details">
+                                <strong>Giờ làm việc:</strong><br>
+                                <span class="text-muted">
+                                    Thứ 2 - Thứ 6: 8:00 - 18:00<br>
+                                    Thứ 7: 8:00 - 12:00
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Signup -->
+                    <div class="newsletter-signup mt-4">
+                        <h6 class="fw-bold mb-3">Đăng ký nhận tin</h6>
+                        <form class="newsletter-form" action="{{ '~/newsletter/subscribe' | href }}" method="post">
+                            {{ Antiforgery.GetHtml }}
+                            <div class="input-group">
+                                <input type="email" name="email" class="form-control" 
+                                       placeholder="Nhập email của bạn..." 
+                                       aria-label="Email address" required>
+                                <button class="btn btn-primary" type="submit" aria-label="Subscribe">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                            <small class="form-text text-muted mt-2">
+                                Nhận thông tin khóa học và ưu đãi mới nhất
+                            </small>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <hr class="my-4 border-secondary">
+        
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="copyright text-muted">
+                    <p class="mb-0">
+                        © {{ "now" | date: "yyyy" }} HoangNgoc Professional. 
+                        Tất cả quyền được bảo lưu.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="col-md-6">
+                <div class="footer-links-bottom text-md-end">
+                    <a href="{{ '~/privacy' | href }}" class="text-muted text-decoration-none me-3 hover-primary">
+                        Chính sách bảo mật
+                    </a>
+                    <a href="{{ '~/terms' | href }}" class="text-muted text-decoration-none me-3 hover-primary">
+                        Điều khoản sử dụng
+                    </a>
+                    <a href="{{ '~/sitemap' | href }}" class="text-muted text-decoration-none hover-primary">
+                        Sơ đồ trang web
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Top Button -->
+        <div class="back-to-top">
+            <button type="button" class="btn btn-primary rounded-circle position-fixed" 
+                    id="backToTop" style="bottom: 20px; right: 20px; z-index: 1000; display: none;"
+                    aria-label="Back to top" title="Về đầu trang">
+                <i class="fas fa-chevron-up"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer Background Pattern -->
+    <div class="footer-pattern position-absolute w-100 h-100" style="top: 0; left: 0; z-index: -1; opacity: 0.05;">
+        <div class="pattern-dots"></div>
+    </div>
+</footer>
+
+<!-- Mobile Bottom Navigation Spacer -->
+<div class="mobile-nav-spacer d-lg-none" style="height: 70px;"></div>

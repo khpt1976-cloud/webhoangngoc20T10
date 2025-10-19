@@ -1,0 +1,272 @@
+{% comment %}
+HoangNgoc Professional Theme v2.0
+Main Navigation Menu
+{% endcomment %}
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" role="navigation" aria-label="Main navigation">
+    <div class="container">
+        <!-- Brand/Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="{{ '~/' | href }}">
+            <i class="fas fa-cube me-2" aria-hidden="true"></i>
+            <span class="fw-bold">HoangNgoc</span>
+            <span class="text-light ms-1">Professional</span>
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation" 
+                aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Menu -->
+        <div class="collapse navbar-collapse" id="mainNavigation">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Home -->
+                <li class="nav-item">
+                    <a class="nav-link {{ Model.IsHomePage | if: 'active', '' }}" 
+                       href="{{ '~/' | href }}" 
+                       aria-current="{{ Model.IsHomePage | if: 'page', 'false' }}">
+                        <i class="fas fa-home me-1" aria-hidden="true"></i>
+                        Trang chủ
+                    </a>
+                </li>
+
+                <!-- News -->
+                <li class="nav-item">
+                    <a class="nav-link {{ Model.CurrentUrl | contains: '/news' | if: 'active', '' }}" 
+                       href="{{ '~/news' | href }}">
+                        <i class="fas fa-newspaper me-1" aria-hidden="true"></i>
+                        Tin tức
+                    </a>
+                </li>
+
+                <!-- Training -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{ Model.CurrentUrl | contains: '/training' | if: 'active', '' }}" 
+                       href="#" id="trainingDropdown" role="button" data-bs-toggle="dropdown" 
+                       aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-graduation-cap me-1" aria-hidden="true"></i>
+                        Đào tạo
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="trainingDropdown">
+                        <li><a class="dropdown-item" href="{{ '~/training/courses' | href }}">
+                            <i class="fas fa-book me-2" aria-hidden="true"></i>Khóa học
+                        </a></li>
+                        <li><a class="dropdown-item" href="{{ '~/training/instructors' | href }}">
+                            <i class="fas fa-chalkboard-teacher me-2" aria-hidden="true"></i>Giảng viên
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="{{ '~/training/certificates' | href }}">
+                            <i class="fas fa-certificate me-2" aria-hidden="true"></i>Chứng chỉ
+                        </a></li>
+                    </ul>
+                </li>
+
+                <!-- Applications -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle {{ Model.CurrentUrl | contains: '/application' | if: 'active', '' }}" 
+                       href="#" id="applicationDropdown" role="button" data-bs-toggle="dropdown" 
+                       aria-expanded="false" aria-haspopup="true">
+                        <i class="fas fa-mobile-alt me-1" aria-hidden="true"></i>
+                        Ứng dụng
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="applicationDropdown">
+                        <li><a class="dropdown-item" href="{{ '~/application/jobs' | href }}">
+                            <i class="fas fa-briefcase me-2" aria-hidden="true"></i>Việc làm
+                        </a></li>
+                        <li><a class="dropdown-item" href="{{ '~/application/portfolio' | href }}">
+                            <i class="fas fa-folder-open me-2" aria-hidden="true"></i>Portfolio
+                        </a></li>
+                        <li><a class="dropdown-item" href="{{ '~/application/services' | href }}">
+                            <i class="fas fa-cogs me-2" aria-hidden="true"></i>Dịch vụ
+                        </a></li>
+                    </ul>
+                </li>
+
+                <!-- Payment -->
+                <li class="nav-item">
+                    <a class="nav-link {{ Model.CurrentUrl | contains: '/payment' | if: 'active', '' }}" 
+                       href="{{ '~/payment' | href }}">
+                        <i class="fas fa-credit-card me-1" aria-hidden="true"></i>
+                        Thanh toán
+                    </a>
+                </li>
+
+                <!-- About -->
+                <li class="nav-item">
+                    <a class="nav-link {{ Model.CurrentUrl | contains: '/about' | if: 'active', '' }}" 
+                       href="{{ '~/about' | href }}">
+                        <i class="fas fa-info-circle me-1" aria-hidden="true"></i>
+                        Giới thiệu
+                    </a>
+                </li>
+
+                <!-- Contact -->
+                <li class="nav-item">
+                    <a class="nav-link {{ Model.CurrentUrl | contains: '/contact' | if: 'active', '' }}" 
+                       href="{{ '~/contact' | href }}">
+                        <i class="fas fa-envelope me-1" aria-hidden="true"></i>
+                        Liên hệ
+                    </a>
+                </li>
+            </ul>
+
+            <!-- Right Side Menu -->
+            <ul class="navbar-nav ms-auto">
+                <!-- Search -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" id="searchDropdown" role="button" data-bs-toggle="dropdown" 
+                       aria-expanded="false" aria-label="Search">
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end p-3" aria-labelledby="searchDropdown" style="min-width: 300px;">
+                        <form class="d-flex" role="search" action="{{ '~/search' | href }}" method="get">
+                            <input class="form-control me-2" type="search" name="q" placeholder="Tìm kiếm..." 
+                                   aria-label="Search" value="{{ Request.Query.q }}">
+                            <button class="btn btn-outline-primary" type="submit" aria-label="Submit search">
+                                <i class="fas fa-search" aria-hidden="true"></i>
+                            </button>
+                        </form>
+                    </div>
+                </li>
+
+                <!-- Notifications -->
+                {% if User.Identity.IsAuthenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" 
+                       data-bs-toggle="dropdown" aria-expanded="false" aria-label="Notifications">
+                        <i class="fas fa-bell" aria-hidden="true"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                            3
+                            <span class="visually-hidden">unread notifications</span>
+                        </span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" style="min-width: 300px;">
+                        <li><h6 class="dropdown-header">Thông báo</h6></li>
+                        <li><a class="dropdown-item" href="#">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0">
+                                    <i class="fas fa-info-circle text-info" aria-hidden="true"></i>
+                                </div>
+                                <div class="flex-grow-1 ms-2">
+                                    <h6 class="mb-1">Khóa học mới</h6>
+                                    <p class="mb-1 small">Khóa học Bootstrap 5.3 đã được cập nhật</p>
+                                    <small class="text-muted">2 giờ trước</small>
+                                </div>
+                            </div>
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item text-center" href="{{ '~/notifications' | href }}">
+                            Xem tất cả thông báo
+                        </a></li>
+                    </ul>
+                </li>
+                {% endif %}
+
+                <!-- User Menu -->
+                {% if User.Identity.IsAuthenticated %}
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="userDropdown" 
+                       role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">
+                        <img src="{{ User | user_avatar: 32 }}" alt="User avatar" class="rounded-circle me-2" width="32" height="32">
+                        <span class="d-none d-md-inline">{{ User.Identity.Name }}</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item" href="{{ '~/profile' | href }}">
+                            <i class="fas fa-user me-2" aria-hidden="true"></i>Hồ sơ
+                        </a></li>
+                        <li><a class="dropdown-item" href="{{ '~/dashboard' | href }}">
+                            <i class="fas fa-tachometer-alt me-2" aria-hidden="true"></i>Dashboard
+                        </a></li>
+                        <li><a class="dropdown-item" href="{{ '~/settings' | href }}">
+                            <i class="fas fa-cog me-2" aria-hidden="true"></i>Cài đặt
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        {% if User | has_claim: "Permission", "ManageUsers" %}
+                        <li><a class="dropdown-item" href="{{ '~/admin' | href }}">
+                            <i class="fas fa-shield-alt me-2" aria-hidden="true"></i>Quản trị
+                        </a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        {% endif %}
+                        <li>
+                            <form method="post" action="{{ '~/logout' | href }}" class="d-inline">
+                                {{ Antiforgery.GetHtml }}
+                                <button type="submit" class="dropdown-item">
+                                    <i class="fas fa-sign-out-alt me-2" aria-hidden="true"></i>Đăng xuất
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+                {% else %}
+                <!-- Login/Register for non-authenticated users -->
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '~/login' | href }}">
+                        <i class="fas fa-sign-in-alt me-1" aria-hidden="true"></i>
+                        Đăng nhập
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ '~/register' | href }}">
+                        <i class="fas fa-user-plus me-1" aria-hidden="true"></i>
+                        Đăng ký
+                    </a>
+                </li>
+                {% endif %}
+
+                <!-- Theme Toggle -->
+                <li class="nav-item">
+                    <button class="nav-link btn btn-link theme-toggle" type="button" 
+                            aria-label="Toggle dark/light theme" title="Toggle theme">
+                        <i class="fas fa-moon" aria-hidden="true"></i>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Bottom Navigation (for mobile devices) -->
+<nav class="navbar navbar-dark bg-dark fixed-bottom d-lg-none mobile-bottom-nav" role="navigation" aria-label="Mobile bottom navigation">
+    <div class="container-fluid">
+        <div class="row w-100 text-center">
+            <div class="col">
+                <a href="{{ '~/' | href }}" class="nav-link {{ Model.IsHomePage | if: 'active', '' }}">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    <small class="d-block">Trang chủ</small>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{{ '~/news' | href }}" class="nav-link {{ Model.CurrentUrl | contains: '/news' | if: 'active', '' }}">
+                    <i class="fas fa-newspaper" aria-hidden="true"></i>
+                    <small class="d-block">Tin tức</small>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{{ '~/training' | href }}" class="nav-link {{ Model.CurrentUrl | contains: '/training' | if: 'active', '' }}">
+                    <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                    <small class="d-block">Đào tạo</small>
+                </a>
+            </div>
+            <div class="col">
+                <a href="{{ '~/application' | href }}" class="nav-link {{ Model.CurrentUrl | contains: '/application' | if: 'active', '' }}">
+                    <i class="fas fa-mobile-alt" aria-hidden="true"></i>
+                    <small class="d-block">Ứng dụng</small>
+                </a>
+            </div>
+            <div class="col">
+                {% if User.Identity.IsAuthenticated %}
+                <a href="{{ '~/profile' | href }}" class="nav-link">
+                    <i class="fas fa-user" aria-hidden="true"></i>
+                    <small class="d-block">Hồ sơ</small>
+                </a>
+                {% else %}
+                <a href="{{ '~/login' | href }}" class="nav-link">
+                    <i class="fas fa-sign-in-alt" aria-hidden="true"></i>
+                    <small class="d-block">Đăng nhập</small>
+                </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</nav>
